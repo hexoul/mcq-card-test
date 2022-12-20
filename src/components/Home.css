@@ -1,0 +1,72 @@
+.Home {
+  text-align: center;
+  background-color: rgb(175, 24, 53);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+  font-size: calc(10px + 2vmin);
+  font-family: 'GangwonEdu_OTFBoldA';
+  color: white;
+}
+
+.Home-LogoImage {
+  width: 5.5rem;
+  margin-top: 3rem;
+  pointer-events: none;
+}
+
+.Home-StartImage {
+  width: 90vmin;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  pointer-events: none;
+}
+
+.Home-Title {
+  font-size: x-large;
+  font-weight: bolder;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.Home-Subtitle {
+  font-size: medium;
+  margin-bottom: 1.5rem;
+}
+
+.Home-StartButton {
+  width: 60vmin;
+  height: 3rem;
+  border-radius: 10px;
+  border-width: 0;
+  font-size: large;
+  font-family: 'GangwonEdu_OTFBoldA';
+  box-shadow: rgba(255, 255, 255, 0.34) 0px 5px 20px;
+}
+
+@media (min-width: 1024px) {
+  .Home-StartImage {
+    width: 30rem;
+  }
+
+  .Home-Title {
+    margin-top: 5vmin;
+  }
+
+  .Home-Subtitle {
+    margin-bottom: 5vmin;
+  }
+
+  .Home-StartButton {
+    width: 40vh;
+  }
+}
+
+@font-face {
+  font-family: 'GangwonEdu_OTFBoldA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
