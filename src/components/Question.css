@@ -11,6 +11,13 @@
   color: white;
 }
 
+.Question-StepLabel {
+  width: 60vmin;
+  margin-top: 2rem;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: medium;
+}
+
 .Question-Stepper {
   width: 60vmin;
 }
@@ -34,6 +41,8 @@
 }
 
 .Question-Choice {
+  width: 70vmin;
+  background-color: white;
   margin-top: 10vmin;
   white-space: pre-wrap;
 }

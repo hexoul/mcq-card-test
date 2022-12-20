@@ -33,6 +33,7 @@ const Home = (props) => {
           boxShadow: "rgba(255, 255, 255, 0.34) 0px 5px 20px",
         }}
         onClick={props.onNext}
+        disableRipple
       >
         <ChevronRightIcon />
         테스트 시작하기

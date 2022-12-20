@@ -39,11 +39,7 @@
 .Home-StartButton {
   width: 60vmin;
   height: 3rem;
-  border-radius: 10px;
   border-width: 0;
-  font-size: large;
-  font-family: 'GangwonEdu_OTFBoldA';
-  box-shadow: rgba(255, 255, 255, 0.34) 0px 5px 20px;
 }
 
 @media (min-width: 1024px) {

@@ -44,12 +44,25 @@ const Question = () => {
 
   return (
     <div className="Question">
+      <div className="Question-StepLabel">{`${activeStep + 1}/${steps}`}</div>
       <MobileStepper
         className="Question-Stepper"
         variant="progress"
         steps={steps}
         position="static"
         activeStep={activeStep}
+        sx={{
+          backgroundColor: "rgb(175, 24, 53)",
+          "& .MuiMobileStepper-progress": {
+            backgroundColor: "rgba(255, 255, 255, 0.07)",
+            borderRadius: "10px",
+            width: "100vmin",
+            height: "20px",
+          },
+          "& span.MuiLinearProgress-bar": {
+            backgroundColor: "white",
+          },
+        }}
       />
       <img
         src={`${process.env.PUBLIC_URL}/img/q${activeStep + 1}.jpg`}
@@ -61,7 +74,13 @@ const Question = () => {
       <Button
         className="Question-Choice"
         variant="contained"
-        sx={{ marginTop: "10vmin" }}
+        sx={{
+          color: "black",
+          backgroundColor: "white",
+          marginTop: "10vmin",
+          fontFamily: "GangwonEdu_OTFBoldA",
+          boxShadow: "rgba(255, 255, 255, 0.34) 0px 5px 20px",
+        }}
         onClick={() => {
           if (activeStep >= steps - 1) return;
           setActiveStep(activeStep + 1);
@@ -72,7 +91,13 @@ const Question = () => {
       <Button
         className="Question-Choice"
         variant="contained"
-        sx={{ marginTop: "10vmin" }}
+        sx={{
+          color: "black",
+          backgroundColor: "white",
+          marginTop: "10vmin",
+          fontFamily: "GangwonEdu_OTFBoldA",
+          boxShadow: "rgba(255, 255, 255, 0.34) 0px 5px 20px",
+        }}
         onClick={() => {
           if (activeStep >= steps - 1) return;
           setActiveStep(activeStep + 1);
