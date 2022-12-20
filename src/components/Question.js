@@ -41,6 +41,15 @@ const secondChoices = [
 
 const Question = () => {
   const [activeStep, setActiveStep] = useState(0);
+  const choiceButtonStyle = {
+    color: "black",
+    backgroundColor: "white",
+    marginTop: "8vmin",
+    borderRadius: "10px",
+    fontSize: "large",
+    fontFamily: "GangwonEdu_OTFBoldA",
+    boxShadow: "rgba(255, 255, 255, 0.34) 0px 5px 20px",
+  };
 
   return (
     <div className="Question">
@@ -74,13 +83,7 @@ const Question = () => {
       <Button
         className="Question-Choice"
         variant="contained"
-        sx={{
-          color: "black",
-          backgroundColor: "white",
-          marginTop: "10vmin",
-          fontFamily: "GangwonEdu_OTFBoldA",
-          boxShadow: "rgba(255, 255, 255, 0.34) 0px 5px 20px",
-        }}
+        sx={choiceButtonStyle}
         onClick={() => {
           if (activeStep >= steps - 1) return;
           setActiveStep(activeStep + 1);
@@ -91,13 +94,7 @@ const Question = () => {
       <Button
         className="Question-Choice"
         variant="contained"
-        sx={{
-          color: "black",
-          backgroundColor: "white",
-          marginTop: "10vmin",
-          fontFamily: "GangwonEdu_OTFBoldA",
-          boxShadow: "rgba(255, 255, 255, 0.34) 0px 5px 20px",
-        }}
+        sx={choiceButtonStyle}
         onClick={() => {
           if (activeStep >= steps - 1) return;
           setActiveStep(activeStep + 1);

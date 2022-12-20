@@ -42,8 +42,8 @@
 
 .Question-Choice {
   width: 70vmin;
+  height: 3rem;
   background-color: white;
-  margin-top: 10vmin;
   white-space: pre-wrap;
 }
 
