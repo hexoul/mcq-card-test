@@ -1,4 +1,5 @@
 import "./App.css";
+import { FaChevronRight } from "react-icons/fa";
 
 const App = () => {
   return (
@@ -19,9 +20,8 @@ const App = () => {
         className="App-StartImage"
         alt="start"
       />
-      <button
-        className="App-StartButton"
-      >
+      <button className="App-StartButton">
+        <FaChevronRight className="App-StartButton__icon" />
         테스트 시작하기
       </button>
     </div>

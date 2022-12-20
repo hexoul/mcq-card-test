@@ -7,6 +7,7 @@
   align-items: center;
   justify-content: top;
   font-size: calc(10px + 2vmin);
+  font-family: 'GangwonEdu_OTFBoldA';
   color: white;
 }
 
@@ -18,13 +19,15 @@
 
 .App-StartImage {
   width: 90vmin;
+  border-radius: 15px;
   pointer-events: none;
 }
 
 .App-Title {
   font-size: x-large;
-  font-weight: bold;
+  font-weight: bolder;
   margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .App-Subtitle {
@@ -36,6 +39,18 @@
   width: 60vmin;
   height: 3rem;
   margin-top: 2rem;
+  border-radius: 10px;
+  border-width: 0;
+  font-size: large;
+  font-family: 'GangwonEdu_OTFBoldA';
+  box-shadow: rgba(255, 255, 255, 0.34) 0px 5px 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-StartButton__icon {
+  margin-right: 10px;
+  height: 15px;
 }
 
 @media (min-width: 1024px) {
@@ -50,4 +65,15 @@
   .App-Subtitle {
     margin-bottom: 5vmin;
   }
+
+  .App-StartButton {
+    width: 40vh;
+  }
+}
+
+@font-face {
+  font-family: 'GangwonEdu_OTFBoldA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
