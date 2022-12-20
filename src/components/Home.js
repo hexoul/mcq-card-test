@@ -1,8 +1,9 @@
 import "./Home.css";
+
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import IconButton from "@mui/material/IconButton";
 
-const Home = () => {
+const Home = (props) => {
   return (
     <div className="Home">
       <img
@@ -23,7 +24,7 @@ const Home = () => {
       />
       <IconButton
         className="Home-StartButton"
-        style={{
+        sx={{
           color: "black",
           backgroundColor: "white",
           borderRadius: "10px",
@@ -31,9 +32,7 @@ const Home = () => {
           fontFamily: "GangwonEdu_OTFBoldA",
           boxShadow: "rgba(255, 255, 255, 0.34) 0px 5px 20px",
         }}
-        onClick={() => {
-          alert("clicked");
-        }}
+        onClick={props.onNext}
       >
         <ChevronRightIcon />
         테스트 시작하기

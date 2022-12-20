@@ -1,0 +1,45 @@
+.Question {
+  text-align: center;
+  background-color: rgb(175, 24, 53);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+  font-size: calc(10px + 2vmin);
+  font-family: 'GangwonEdu_OTFBoldA';
+  color: white;
+}
+
+.Question-Stepper {
+  width: 60vmin;
+}
+
+.Question-Image {
+  width: 70vmin;
+  border-radius: 15px;
+  margin-top: 7vmin;
+  margin-bottom: 2rem;
+  pointer-events: none;
+}
+
+.Question-Number {
+  font-size: xx-large;
+}
+
+.Question-Label {
+  margin-top: 1rem;
+  white-space: pre-wrap;
+  font-size: medium;
+}
+
+.Question-Choice {
+  margin-top: 10vmin;
+  white-space: pre-wrap;
+}
+
+@media (min-width: 1024px) {
+  .Question-Image {
+    width: 30rem;
+  }
+}
