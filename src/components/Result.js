@@ -1,7 +1,11 @@
+import { useLocation } from 'react-router-dom';
+
 import "./Result.css";
 
 const Result = () => {
-  return <div>foo</div>;
+  const location = useLocation();
+  const id = location.pathname.split('/')[2];
+  return <div>{`foo${id}`}</div>;
 };
 
 export default Result;

@@ -1,8 +1,8 @@
-import "./Home.css";
-
 import { useCallback, useState } from "react";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import IconButton from "@mui/material/IconButton";
+
+import "./Home.css";
 import Question from "./Question";
 
 const Home = () => {
