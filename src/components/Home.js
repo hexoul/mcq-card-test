@@ -1,10 +1,17 @@
 import "./Home.css";
 
+import { useCallback, useState } from "react";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import IconButton from "@mui/material/IconButton";
+import Question from "./Question";
 
-const Home = (props) => {
-  return (
+const Home = () => {
+  const [start, setStart] = useState(false);
+  const doStart = useCallback(() => setStart(true), []);
+
+  return start ? (
+    <Question />
+  ) : (
     <div className="Home">
       <img
         src={`${process.env.PUBLIC_URL}/logo512.png`}
@@ -28,7 +35,7 @@ const Home = (props) => {
           fontFamily: "GangwonEdu_OTFBoldA",
           boxShadow: "rgba(255, 255, 255, 0.34) 0px 5px 20px",
         }}
-        onClick={props.onNext}
+        onClick={doStart}
         disableRipple
       >
         <ChevronRightIcon />

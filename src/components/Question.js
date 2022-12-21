@@ -62,8 +62,7 @@ const Question = () => {
   const [done, setDone] = useState(false);
 
   const firstChoiceHandler = useCallback(() => {
-    if (activeStep >= steps) return;
-    else if (done) return;
+    if (activeStep >= steps || done) return;
 
     switch (activeStep) {
       case 0:
@@ -107,8 +106,7 @@ const Question = () => {
   }, [activeStep, mbtiCount, done]);
 
   const secondChoiceHandler = useCallback(() => {
-    if (activeStep >= steps) return;
-    else if (done) return;
+    if (activeStep >= steps || done) return;
 
     switch (activeStep) {
       case 0:
