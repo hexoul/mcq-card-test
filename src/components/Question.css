@@ -19,7 +19,7 @@
 }
 
 .Question-Stepper {
-  width: 60vmin;
+  width: 65vmin;
 }
 
 .Question-Image {
@@ -42,7 +42,7 @@
 
 .Question-Choice {
   width: 70vmin;
-  height: 3rem;
+  height: 3.5rem;
   background-color: white;
   white-space: pre-wrap;
 }

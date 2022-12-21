@@ -46,9 +46,10 @@ const Question = () => {
     backgroundColor: "white",
     marginTop: "8vmin",
     borderRadius: "10px",
-    fontSize: "large",
     fontFamily: "GangwonEdu_OTFBoldA",
     boxShadow: "rgba(255, 255, 255, 0.34) 0px 5px 20px",
+    "&:focus": { color: "black", backgroundColor: "white" },
+    "&:hover": { color: "black", backgroundColor: "white" },
   };
 
   return (
@@ -68,9 +69,7 @@ const Question = () => {
             width: "100vmin",
             height: "20px",
           },
-          "& span.MuiLinearProgress-bar": {
-            backgroundColor: "white",
-          },
+          "& span.MuiLinearProgress-bar": { backgroundColor: "white" },
         }}
       />
       <img
@@ -82,7 +81,9 @@ const Question = () => {
       <div className="Question-Label">{questions[activeStep]}</div>
       <Button
         className="Question-Choice"
-        variant="contained"
+        color="inherit"
+        disableRipple
+        disableFocusRipple
         sx={choiceButtonStyle}
         onClick={() => {
           if (activeStep >= steps - 1) return;
@@ -93,7 +94,9 @@ const Question = () => {
       </Button>
       <Button
         className="Question-Choice"
-        variant="contained"
+        color="inherit"
+        disableRipple
+        disableFocusRipple
         sx={choiceButtonStyle}
         onClick={() => {
           if (activeStep >= steps - 1) return;
