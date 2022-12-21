@@ -59,7 +59,7 @@ const data = [
 const buttonStyle = {
   color: "black",
   backgroundColor: "white",
-  marginTop: "1rem",
+  marginTop: "2rem",
   borderRadius: "10px",
   lineHeight: "1.1rem",
   fontSize: "large",
@@ -86,19 +86,20 @@ const Result = () => {
           }}
         />
         <div className="Result-Description">{`${data[id].description}`}</div>
+        <Button
+          className="Result-Button"
+          component="a"
+          href={data[id].link}
+          disableRipple
+          disableFocusRipple
+          sx={buttonStyle}
+        >
+          지금 바로 보러가기!
+        </Button>
+        <div className="Result-Share">친구에게 공유하기</div>
       </div>
       <Button
-        className="Result-GoContent"
-        component="a"
-        href={data[id].link}
-        disableRipple
-        disableFocusRipple
-        sx={buttonStyle}
-      >
-        지금 바로 보러가기!
-      </Button>
-      <Button
-        className="Result-GoContent"
+        className="Result-Button"
         component={Link}
         to="/"
         disableRipple

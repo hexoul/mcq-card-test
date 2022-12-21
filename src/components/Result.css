@@ -29,10 +29,14 @@
   white-space: pre-wrap;
   margin-top: 10rem;
   margin-bottom: 1.5rem;
-  padding: 1.5rem 3rem 4rem;
+  padding: 1.5rem 3rem 3rem;
 }
 
-.Result-GoContent {
+.Result-Share {
+  margin-top: 3rem;
+}
+
+.Result-Button {
   width: 50vmin;
   height: 3rem;
 }
