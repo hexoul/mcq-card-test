@@ -17,7 +17,7 @@ const data = [
   {
     question:
       "친구들과의 크리스마스 파티가 예정되어 있던 당신,\n폭설로 오도가도 못하게 됐다면?",
-    firstChoice: "파티? 영통으로 하면 돼. 영상 통화로 친구들과 파티!",
+    firstChoice: "파티? 영통으로 하면 돼.\n영상 통화로 친구들과 파티!",
     secondChoice: "올해는 가족들과 즐거운 크리스마스 보내기",
   },
   {
@@ -66,11 +66,23 @@ const data = [
   },
 ];
 
+const stepperStyle = {
+  backgroundColor: "rgb(25, 69, 51)",
+  "& .MuiMobileStepper-progress": {
+    backgroundColor: "rgba(255, 255, 255, 0.07)",
+    borderRadius: "10px",
+    width: "100vmin",
+    height: "20px",
+  },
+  "& span.MuiLinearProgress-bar": { backgroundColor: "white" },
+};
+
 const choiceButtonStyle = {
   color: "black",
   backgroundColor: "white",
   marginTop: "9vmin",
   borderRadius: "10px",
+  lineHeight: "1.1rem",
   fontFamily: "GangwonEdu_OTFBoldA",
   boxShadow: "rgba(255, 255, 255, 0.34) 0px 5px 20px",
   "&:focus": { color: "black", backgroundColor: "white" },
@@ -207,16 +219,7 @@ const Question = () => {
         steps={steps}
         position="static"
         activeStep={activeStep}
-        sx={{
-          backgroundColor: "rgb(25, 69, 51)",
-          "& .MuiMobileStepper-progress": {
-            backgroundColor: "rgba(255, 255, 255, 0.07)",
-            borderRadius: "10px",
-            width: "100vmin",
-            height: "20px",
-          },
-          "& span.MuiLinearProgress-bar": { backgroundColor: "white" },
-        }}
+        sx={stepperStyle}
       />
       <img
         src={`https://static.kinolights.com/mbti/2022-christmas/q${activeStep + 1}.jpg`}

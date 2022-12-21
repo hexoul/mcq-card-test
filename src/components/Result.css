@@ -5,6 +5,34 @@
   flex-direction: column;
   align-items: center;
   justify-content: top;
-  font-size: calc(10px + 2vmin);
-  font-family: 'GangwonEdu_OTFBoldA';
+  font-size: medium;
+}
+
+.Result-Title {
+  font-size: large;
+}
+
+.Result-Subtitle {
+  font-size: x-large;
+  margin-top: 0.3rem;
+  margin-bottom: 1.5rem;
+}
+
+.Result-Description {
+  margin-top: 1.5rem;
+}
+
+.Result-Card {
+  width: 350px;
+  border-radius: 10px;
+  box-shadow: rgba(255, 255, 255, 0.34) 0px 10px 20px 0.5px;
+  white-space: pre-wrap;
+  margin-top: 10rem;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem 3rem 4rem;
+}
+
+.Result-GoContent {
+  width: 50vmin;
+  height: 3rem;
 }
