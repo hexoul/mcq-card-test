@@ -11,12 +11,8 @@ const Home = (props) => {
         className="Home-LogoImage"
         alt="logo"
       />
-      <div class="Home-Title">나와 잘 맞는 크리스마스 캐롤은?</div>
-      <div class="Home-Subtitle">
-        <b>유니버설 뮤직 코리아 x 트렌드어워드</b>
-        <br />
-        찰떡 같은 캐롤을 추천해드립니다!
-      </div>
+      <div class="Home-Title">크리스마스 영화 테스트</div>
+      <div class="Home-Subtitle">나와 잘 맞는 크리스마스 영화는?🎄</div>
       <img
         src={`${process.env.PUBLIC_URL}/img/start-image.jpg`}
         className="Home-StartImage"
