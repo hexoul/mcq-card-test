@@ -1,4 +1,5 @@
 import { useCallback, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import MobileStepper from "@mui/material/MobileStepper";
 import Button from "@mui/material/Button";
 
@@ -39,17 +40,20 @@ const secondChoices = [
   "어쩔 수 없지! 집에서 따뜻하게 특선 영화를 보며 유유자적하기",
 ];
 
+const choiceButtonStyle = {
+  color: "black",
+  backgroundColor: "white",
+  marginTop: "9vmin",
+  borderRadius: "10px",
+  fontFamily: "GangwonEdu_OTFBoldA",
+  boxShadow: "rgba(255, 255, 255, 0.34) 0px 5px 20px",
+  "&:focus": { color: "black", backgroundColor: "white" },
+  "&:hover": { color: "black", backgroundColor: "white" },
+};
+
 const Question = () => {
-  const choiceButtonStyle = {
-    color: "black",
-    backgroundColor: "white",
-    marginTop: "9vmin",
-    borderRadius: "10px",
-    fontFamily: "GangwonEdu_OTFBoldA",
-    boxShadow: "rgba(255, 255, 255, 0.34) 0px 5px 20px",
-    "&:focus": { color: "black", backgroundColor: "white" },
-    "&:hover": { color: "black", backgroundColor: "white" },
-  };
+  const navigate = useNavigate();
+
   const [mbtiCount, setMbtiCount] = useState({
     e: 0,
     i: 0,
@@ -60,6 +64,16 @@ const Question = () => {
   });
   const [activeStep, setActiveStep] = useState(0);
   const [done, setDone] = useState(false);
+
+  const postprocess = useCallback(() => {
+    if (activeStep === 8) {
+      setDone(true);
+      navigate("/result/5");
+    } else {
+      setActiveStep(activeStep + 1);
+      setMbtiCount(mbtiCount);
+    }
+  }, [activeStep, mbtiCount, navigate]);
 
   const firstChoiceHandler = useCallback(() => {
     if (activeStep >= steps || done) return;
@@ -96,14 +110,8 @@ const Question = () => {
         break;
     }
 
-    if (activeStep === 8) {
-      console.log(mbtiCount);
-      setDone(true);
-    } else {
-      setActiveStep(activeStep + 1);
-      setMbtiCount(mbtiCount);
-    }
-  }, [activeStep, mbtiCount, done]);
+    postprocess();
+  }, [activeStep, mbtiCount, done, postprocess]);
 
   const secondChoiceHandler = useCallback(() => {
     if (activeStep >= steps || done) return;
@@ -140,14 +148,8 @@ const Question = () => {
         break;
     }
 
-    if (activeStep === 8) {
-      console.log(mbtiCount);
-      setDone(true);
-    } else {
-      setActiveStep(activeStep + 1);
-      setMbtiCount(mbtiCount);
-    }
-  }, [activeStep, mbtiCount, done]);
+    postprocess();
+  }, [activeStep, mbtiCount, done, postprocess]);
 
   return (
     <div className="Question">
