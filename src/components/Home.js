@@ -11,8 +11,8 @@ const Home = (props) => {
         className="Home-LogoImage"
         alt="logo"
       />
-      <div class="Home-Title">크리스마스 영화 테스트</div>
-      <div class="Home-Subtitle">나와 잘 맞는 크리스마스 영화는?🎄</div>
+      <div className="Home-Title">크리스마스 영화 테스트</div>
+      <div className="Home-Subtitle">나와 잘 맞는 크리스마스 영화는?🎄</div>
       <img
         src={`${process.env.PUBLIC_URL}/img/start-image.jpg`}
         className="Home-StartImage"

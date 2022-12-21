@@ -1,6 +1,6 @@
 import "./Question.css";
 
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import MobileStepper from "@mui/material/MobileStepper";
 import Button from "@mui/material/Button";
 
@@ -19,7 +19,7 @@ const questions = [
 const firstChoices = [
   "아니 어떻게 내 얼굴을 전 세계에 팔아?\n먼 발치에서 구경만 하기",
   "파티? 영통으로 하면 돼. 영상 통화로 친구들과 파티!",
-  "동심은 지켜줘야지!\n\"당연하지! 산타 할아버지는 우는 아이한테 선물 안주니까 뚝!\"",
+  '동심은 지켜줘야지!\n"당연하지! 산타 할아버지는 우는 아이한테 선물 안주니까 뚝!"',
   "나의 취향을 보여줄 수 있는 아지트같은 장소",
   "평소 가지고 싶었던 사랑스러운 곰인형이나 귀여운 소품 선물하기",
   "이건 아니지 나 자신아.\n꾹 참고 식단 계속하기",
@@ -30,7 +30,7 @@ const firstChoices = [
 const secondChoices = [
   "뭐 어때 추억인데! 한 번 해보기",
   "올해는 가족들과 즐거운 크리스마스 보내기",
-  "아이의 귀에 대고 작게...\n\"걱정마 울어도 돼. 사실 산타는 없거든\"",
+  '아이의 귀에 대고 작게...\n"걱정마 울어도 돼. 사실 산타는 없거든"',
   "인스타 각! 트렌디함을 어필할 핫플로 직행",
   "현금이 최고지! 내가 자유롭게 쓸 수 있는 현금을 나에게 허락한다!",
   "에라 모르겠다! 하루는 괜찮아.\n침도 안 닦고 닭 봉 잡기",
@@ -40,7 +40,6 @@ const secondChoices = [
 ];
 
 const Question = () => {
-  const [activeStep, setActiveStep] = useState(0);
   const choiceButtonStyle = {
     color: "black",
     backgroundColor: "white",
@@ -51,6 +50,106 @@ const Question = () => {
     "&:focus": { color: "black", backgroundColor: "white" },
     "&:hover": { color: "black", backgroundColor: "white" },
   };
+  const [mbtiCount, setMbtiCount] = useState({
+    e: 0,
+    i: 0,
+    f: 0,
+    t: 0,
+    j: 0,
+    p: 0,
+  });
+  const [activeStep, setActiveStep] = useState(0);
+  const [done, setDone] = useState(false);
+
+  const firstChoiceHandler = useCallback(() => {
+    if (activeStep >= steps) return;
+    else if (done) return;
+
+    switch (activeStep) {
+      case 0:
+        mbtiCount.i++;
+        break;
+      case 1:
+        mbtiCount.j++;
+        break;
+      case 2:
+        mbtiCount.f++;
+        break;
+      case 3:
+        mbtiCount.e++;
+        break;
+      case 4:
+        mbtiCount.f++;
+        break;
+      case 5:
+        mbtiCount.j++;
+        break;
+      case 6:
+        mbtiCount.f++;
+        break;
+      case 7:
+        mbtiCount.e++;
+        break;
+      case 8:
+        mbtiCount.j++;
+        break;
+      default:
+        break;
+    }
+
+    if (activeStep === 8) {
+      console.log(mbtiCount);
+      setDone(true);
+    } else {
+      setActiveStep(activeStep + 1);
+      setMbtiCount(mbtiCount);
+    }
+  }, [activeStep, mbtiCount, done]);
+
+  const secondChoiceHandler = useCallback(() => {
+    if (activeStep >= steps) return;
+    else if (done) return;
+
+    switch (activeStep) {
+      case 0:
+        mbtiCount.e++;
+        break;
+      case 1:
+        mbtiCount.p++;
+        break;
+      case 2:
+        mbtiCount.t++;
+        break;
+      case 3:
+        mbtiCount.i++;
+        break;
+      case 4:
+        mbtiCount.t++;
+        break;
+      case 5:
+        mbtiCount.p++;
+        break;
+      case 6:
+        mbtiCount.t++;
+        break;
+      case 7:
+        mbtiCount.i++;
+        break;
+      case 8:
+        mbtiCount.p++;
+        break;
+      default:
+        break;
+    }
+
+    if (activeStep === 8) {
+      console.log(mbtiCount);
+      setDone(true);
+    } else {
+      setActiveStep(activeStep + 1);
+      setMbtiCount(mbtiCount);
+    }
+  }, [activeStep, mbtiCount, done]);
 
   return (
     <div className="Question">
@@ -81,27 +180,19 @@ const Question = () => {
       <div className="Question-Label">{questions[activeStep]}</div>
       <Button
         className="Question-Choice"
-        color="inherit"
         disableRipple
         disableFocusRipple
         sx={choiceButtonStyle}
-        onClick={() => {
-          if (activeStep >= steps - 1) return;
-          setActiveStep(activeStep + 1);
-        }}
+        onClick={firstChoiceHandler}
       >
         {firstChoices[activeStep]}
       </Button>
       <Button
         className="Question-Choice"
-        color="inherit"
         disableRipple
         disableFocusRipple
         sx={choiceButtonStyle}
-        onClick={() => {
-          if (activeStep >= steps - 1) return;
-          setActiveStep(activeStep + 1);
-        }}
+        onClick={secondChoiceHandler}
       >
         {secondChoices[activeStep]}
       </Button>
