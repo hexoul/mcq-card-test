@@ -27,14 +27,14 @@
 }
 
 .Result-Card {
-  width: 55vmin;
+  width: 65vmin;
   background-color: rgb(25, 69, 51);
   border-radius: 10px;
   box-shadow: rgba(255, 255, 255, 0.34) 0px 10px 20px 0.5px;
   white-space: pre-wrap;
   margin-top: 10rem;
   margin-bottom: 1.5rem;
-  padding: 1.5rem 3rem 3rem;
+  padding: 20px 5vmin 50px;
 }
 
 .Result-Share {
