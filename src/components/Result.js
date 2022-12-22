@@ -1,5 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
+import ReplayIcon from "@mui/icons-material/Replay";
+import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
 
@@ -75,39 +77,45 @@ const Result = () => {
 
   return (
     <div className="Result">
-      <div className="Result-Card">
-        <div className="Result-Title">당신의 크리스마스 영화는,</div>
-        <div className="Result-Subtitle">{`${data[id].title}`}</div>
-        <Divider
-          variant="middle"
-          sx={{
-            backgroundColor: "rgba(255, 255, 255, 0.3)",
-            borderBottomWidth: 4,
-          }}
-        />
-        <div className="Result-Description">{`${data[id].description}`}</div>
+      <Box
+        component="span"
+        sx={{ width: "75vmin", p: "100px 40px", border: "1px dashed grey" }}
+      >
+        <div className="Result-Card">
+          <div className="Result-Title">당신의 크리스마스 영화는,</div>
+          <div className="Result-Subtitle">{`${data[id].title}`}</div>
+          <Divider
+            variant="middle"
+            sx={{
+              backgroundColor: "rgba(255, 255, 255, 0.3)",
+              borderBottomWidth: 4,
+            }}
+          />
+          <div className="Result-Description">{`${data[id].description}`}</div>
+          <Button
+            className="Result-Button"
+            component="a"
+            href={data[id].link}
+            disableRipple
+            disableFocusRipple
+            sx={buttonStyle}
+          >
+            지금 바로 보러가기!
+          </Button>
+          <div className="Result-Share">친구에게 공유하기</div>
+        </div>
         <Button
           className="Result-Button"
-          component="a"
-          href={data[id].link}
+          component={Link}
+          to="/"
           disableRipple
           disableFocusRipple
+          startIcon={<ReplayIcon />}
           sx={buttonStyle}
         >
-          지금 바로 보러가기!
+          테스트 다시하기
         </Button>
-        <div className="Result-Share">친구에게 공유하기</div>
-      </div>
-      <Button
-        className="Result-Button"
-        component={Link}
-        to="/"
-        disableRipple
-        disableFocusRipple
-        sx={buttonStyle}
-      >
-        테스트 다시하기
-      </Button>
+      </Box>
     </div>
   );
 };
