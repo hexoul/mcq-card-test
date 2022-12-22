@@ -85,8 +85,7 @@ const Result = () => {
         justifyContent="center"
         sx={{
           p: "100px 30px",
-          border: "1px dashed grey",
-          backgroundImage: `url(https://static.kinolights.com/mbti/2022-christmas/r${id}.jpeg)`,
+          backgroundImage: `linear-gradient(rgba(25, 69, 51, 0), rgba(25, 69, 51, 1)), url(https://static.kinolights.com/mbti/2022-christmas/r${id}.jpeg)`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
         }}
