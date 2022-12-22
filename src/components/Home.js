@@ -18,8 +18,11 @@ const Home = () => {
         className="Home-LogoImage"
         alt="logo"
       />
-      <div className="Home-Title">크리스마스 영화 테스트</div>
-      <div className="Home-Subtitle">나와 잘 맞는 크리스마스 영화는?🎄</div>
+      <div className="Home-Title">나와 잘 맞는 크리스마스 영화는?🎄</div>
+      <div className="Home-Subtitle">
+        크리스마스에 볼 영화, 아직도 못 골랐다면<br />
+        나에게 딱! 맞는 크리스마스 영화를 찾아보자!
+      </div>
       <img
         src="https://static.kinolights.com/mbti/2022-christmas/start-image.jpg"
         className="Home-StartImage"
