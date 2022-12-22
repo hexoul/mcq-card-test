@@ -22,8 +22,12 @@
   margin-top: 1.5rem;
 }
 
+.Result-Box {
+  width: 75vmin;
+}
+
 .Result-Card {
-  width: 60vmin;
+  width: 55vmin;
   border-radius: 10px;
   box-shadow: rgba(255, 255, 255, 0.34) 0px 10px 20px 0.5px;
   white-space: pre-wrap;
@@ -43,6 +47,14 @@
 
 @media (min-width: 700px) {
   .Result-Card {
+    width: 400px;
+  }
+
+  .Result-Box {
     width: 500px;
+  }
+
+  .Result-Button {
+    width: 300px;
   }
 }
