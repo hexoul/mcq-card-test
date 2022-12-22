@@ -1,9 +1,11 @@
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
+import LinkIcon from "@mui/icons-material/Link";
 import ReplayIcon from "@mui/icons-material/Replay";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
+import IconButton from "@mui/material/IconButton";
 
 import "./Result.css";
 
@@ -112,6 +114,18 @@ const Result = () => {
             지금 바로 보러가기!
           </Button>
           <div className="Result-Share">친구에게 공유하기</div>
+          <IconButton
+            color="inherit"
+            component="label"
+            sx={{ backgroundColor: "rgba(255, 255, 255, 0.2)" }}
+            onClick={() => {
+              navigator.clipboard
+                .writeText(`https://2022christmas.kinolights.com/result/${id}`)
+                .then(() => alert("주소가 복사되었습니다.\n원하는 곳에 붙여넣기 해주세요."));
+            }}
+          >
+            <LinkIcon />
+          </IconButton>
         </div>
         <Button
           className="Result-Button"
