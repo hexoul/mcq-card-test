@@ -46,13 +46,13 @@
   height: 3rem;
 }
 
-@media (min-width: 700px) {
-  .Result-Card {
-    width: 400px;
+@media (min-width: 640px) {
+  .Result-Box {
+    width: 450px;
   }
 
-  .Result-Box {
-    width: 500px;
+  .Result-Card {
+    width: 350px;
   }
 
   .Result-Button {
