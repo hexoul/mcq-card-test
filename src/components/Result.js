@@ -1,5 +1,4 @@
-import { useLocation } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import LinkIcon from "@mui/icons-material/Link";
 import ReplayIcon from "@mui/icons-material/Replay";
 import Box from "@mui/material/Box";
@@ -102,7 +101,10 @@ const Result = () => {
               borderBottomWidth: 4,
             }}
           />
-          <div className="Result-Description">{`${data[id].description}`}</div>
+          <div
+            className="Result-Description"
+            dangerouslySetInnerHTML={{ __html: data[id].description }}
+          />
           <Button
             className="Result-Button"
             component="a"
@@ -118,11 +120,11 @@ const Result = () => {
             color="inherit"
             component="label"
             sx={{ backgroundColor: "rgba(255, 255, 255, 0.2)" }}
-            onClick={() => {
+            onClick={() =>
               navigator.clipboard
                 .writeText(`https://2022christmas.kinolights.com/result/${id}`)
-                .then(() => alert("주소가 복사되었습니다.\n원하는 곳에 붙여넣기 해주세요."));
-            }}
+                .then(() => alert("주소가 복사되었습니다.\n원하는 곳에 붙여넣기 해주세요."))
+            }
           >
             <LinkIcon />
           </IconButton>

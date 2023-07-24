@@ -22,6 +22,10 @@
   margin-top: 1.5rem;
 }
 
+.Result-Description > a {
+  color: #fff;
+}
+
 .Result-Box {
   width: 75vmin;
 }
