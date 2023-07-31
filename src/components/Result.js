@@ -116,18 +116,38 @@ const Result = () => {
             지금 바로 보러가기!
           </Button>
           <div className="Result-Share">친구에게 공유하기</div>
-          <IconButton
-            color="inherit"
-            component="label"
-            sx={{ backgroundColor: "rgba(255, 255, 255, 0.2)" }}
-            onClick={() =>
-              navigator.clipboard
-                .writeText(`https://2022christmas.kinolights.com/result/${id}`)
-                .then(() => alert("주소가 복사되었습니다.\n원하는 곳에 붙여넣기 해주세요."))
-            }
-          >
-            <LinkIcon />
-          </IconButton>
+          <div>
+            <Button
+              id="kakaotalk-sharing-btn"
+              disableRipple
+              disableFocusRipple
+              sx={{
+                p: "20px",
+                backgroundImage:
+                  "url(https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png)",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "contain",
+              }}
+              onClick={() =>
+                window.Kakao.Share.createScrapButton({
+                  container: "#kakaotalk-sharing-btn",
+                  requestUrl: "https://2022christmas.kinolights.com",
+                })
+              }
+            />
+            <IconButton
+              color="inherit"
+              component="label"
+              sx={{ backgroundColor: "rgba(255, 255, 255, 0.2)" }}
+              onClick={() =>
+                navigator.clipboard
+                  .writeText(`https://2022christmas.kinolights.com/result/${id}`)
+                  .then(() => alert("주소가 복사되었습니다.\n원하는 곳에 붙여넣기 해주세요."))
+              }
+            >
+              <LinkIcon />
+            </IconButton>
+          </div>
         </div>
         <Button
           className="Result-Button"
