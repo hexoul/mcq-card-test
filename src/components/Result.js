@@ -122,11 +122,14 @@ const Result = () => {
               disableRipple
               disableFocusRipple
               sx={{
-                p: "20px",
+                minWidth: "20px",
                 backgroundImage:
                   "url(https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png)",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "contain",
+                p: "20px",
+                mr: "0.5rem",
+                borderRadius: "50px",
               }}
               onClick={() =>
                 window.Kakao.Share.createScrapButton({
